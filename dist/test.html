@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,
+            user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>Admin-page Cứu trợ thú cưng</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../dist/css/qlPostTim.css">
+    <link rel="stylesheet" href="./css/test.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        
+        body {
+            background-color: #ECEFF1;
+            color: #37474F;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-weight: 200;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Open Modal</button>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Open Modal</button>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal1" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="slideContainer">
+                        <div class="picture">
+                            <img src="https://images.unsplash.com/photo-1485646485012-f09e6a19d9c4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=35deb3c9cdf9c401a71377fb09238eb4&auto=format&fit=crop&w=1500&q=80">
+                        </div>
+                        <div class="picture">
+                            <img src="https://images.unsplash.com/photo-1497120573086-6219573cf71c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ce6032d8d7955f6d9601c7293dab2f2f&auto=format&fit=crop&w=1052&q=80">
+                        </div>
+                        <div class="picture">
+                            <img src="https://images.unsplash.com/photo-1486758206125-94d07f414b1c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5dd0763cb8402ca760ec8d37336eb372&auto=format&fit=crop&w=1050&q=80">
+                        </div>
+                        <div class="arrow">
+                            <a class="previous" onclick="slideMove(-1)">&#10094;</a>
+                            <a class="next" onclick="slideMove(1)">&#10095; </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="modal fade" id="myModal1" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Modal Header</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="comments-app" ng-app="commentsApp" ng-controller="CommentsController as cmntCtrl">
+                                        <!-- Comments List -->
+                                        <div class="comments">
+                                            <!-- Comment -->
+                                            <div class="comment" ng-repeat="comment in cmntCtrl.comments | orderBy: '-date'">
+                                                <!-- Comment Avatar -->
+                                                <div class="comment-avatar">
+                                                    <img ng-src="{{ comment.avatarSrc }}">
+                                                </div>
+                                                <!-- Comment - Dummy -->
+                                                <div class="comment">
+                                                    <!-- Comment Avatar -->
+                                                    <div class="comment-avatar">
+                                                        <img src="http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80">
+                                                    </div>
+
+                                                    <!-- Comment Box -->
+                                                    <div class="comment-box">
+                                                        <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus iste nostrum dolorem natus recusandae incidunt voluptatum.</div>
+                                                        <div class="comment-footer">
+                                                            <div class="comment-info">
+                                                                <span class="comment-author">
+                                                    <a href="mailto:sexar@pagelab.io">Sexar</a>
+                                                  </span>
+                                                                <span class="comment-date">Feb 2, 2013 11:32:04 PM</span>
+                                                            </div>
+
+                                                            <div class="comment-actions">
+                                                                <a href="#">Reply</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Comment - Dummy -->
+                                                <div class="comment">
+                                                    <!-- Comment Avatar -->
+                                                    <div class="comment-avatar">
+                                                        <img src="http://lorempixel.com/200/200/people">
+                                                    </div>
+
+                                                    <!-- Comment Box -->
+                                                    <div class="comment-box">
+                                                        <div class="comment-text">Eligendi voluptatum ducimus architecto tempore, quaerat explicabo veniam fuga corporis totam reprehenderit quasi sapiente modi tempora at perspiciatis mollitia, dolores voluptate. Cumque, corrupti?</div>
+                                                        <div class="comment-footer">
+                                                            <div class="comment-info">
+                                                                <span class="comment-author">
+                                                    <a href="mailto:ximme13@somedomain.io">Ximme</a>
+                                                  </span>
+                                                                <span class="comment-date">Jan 31, 1986 11:32:04 PM</span>
+                                                            </div>
+
+                                                            <div class="comment-actions">
+                                                                <a href="#">Reply</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <script>
+        var slideIndex = 1;
+        slideShow(slideIndex);
+
+        function slideMove(n) {
+            slideShow(slideIndex += n);
+        }
+
+        function slideShow(n) {
+            var i;
+            var slide = document.getElementsByClassName("picture");
+
+            if (n > slide.length) {
+                slideIndex = 1;
+            }
+
+            if (n < 1) {
+                slideIndex = slide.length;
+            }
+
+            for (i = 0; i < slide.length; i++) {
+                slide[i].style.display = "none";
+            }
+
+            slide[slideIndex - 1].style.display = "block";
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/datatables-demo.js"></script>
+</body>
+
+</html>

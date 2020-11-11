@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,
+            user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>Admin-page Cứu trợ thú cưng</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../dist/css/qlPostTim.css">
+    <link rel="stylesheet" href="./css/test.css">
+    <style type="text/css">
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        
+        body {
+            background-color: #ECEFF1;
+            color: #37474F;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-weight: 200;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Cứu trợ thú cưng</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Chính</div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Trang chủ
+                        </a>
+                        <div class="sb-sidenav-menu-heading">quản lí</div>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-scroll" style="color: white !important;"></i></div>
+                            Quản lí bài đăng
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down" style="color: white !important;"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="QuanLibaiDangTim.html">Bài đăng tìm cứu trợ</a>
+                                <a class="nav-link" href="TimChu.html">Bài đăng tìm chủ mới</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fa fa-users"></i></div>
+                            Quản lí người dùng
+                        </a>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-hospital"></i></div>
+                            Quản lí trung tâm cứu trợ
+                        </a>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-paw"></i></div>
+                            Quản lí thú cưng
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <a class="nav-link" href="login.html">
+                            Logout
+                        </a>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+                    <h1 class="mt-4">Quản lí bài đăng tìm cứu trợ</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active"></li>
+                    </ol>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table mr-1"></i> Bảng quản lí người dùng
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Stt</th>
+                                            <th>Tiêu đề</th>
+                                            <th>Người đăng</th>
+                                            <th>Thời gian</th>
+                                            <th>Vị trí</th>
+                                            <th>Mức độ</th>
+                                            <th>Hình ảnh</th>
+                                            <th>Hiện trạng</th>
+                                            <th>Vị trí vết thương</th>
+                                            <th>Loại</th>
+                                            <th>Màu sắc</th>
+                                            <th>Xóa</th>
+                                        </tr>
+
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Stt</th>
+                                            <th>Tiêu đề</th>
+                                            <th>Người đăng</th>
+                                            <th>Thời gian</th>
+                                            <th>Vị trí</th>
+                                            <th>Mức độ</th>
+                                            <th>Hình ảnh</th>
+                                            <th>Hiện trạng</th>
+                                            <th>Vị trí vết thương</th>
+                                            <th>Loại</th>
+                                            <th>Màu sắc</th>
+                                            <th>Xóa</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Mèo con bị phỏng ở miệng</td>
+                                            <td>Luân</td>
+                                            <td>16/10/2020 14:02:45</td>
+                                            <td>120 Võ Văn Ngân, Q9, Tp.HCM</td>
+                                            <td><button type="button" class="btn btn-success">Xem thêm</button></td>
+                                            <td>Nặng</td>
+                                            <td>Bị thương</td>
+                                            <td>Miệng</td>
+                                            <td>Mèo</td>
+                                            <td>Vàng</td>
+                                            <td><button type="button" class="btn btn-danger">Xóa</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Mèo con bị phỏng ở miệng</td>
+                                            <td>Luân</td>
+                                            <td>16/10/2020 14:02:45</td>
+                                            <td>120 Võ Văn Ngân, Q9, Tp.HCM</td>
+                                            <td><button type="button" class="btn btn-success">Xem thêm</button></td>
+                                            <td>Nặng</td>
+                                            <td>Bị thương</td>
+                                            <td>Miệng</td>
+                                            <td>Mèo</td>
+                                            <td>Vàng</td>
+                                            <td><button type="button" class="btn btn-danger">Xóa</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Mèo con bị phỏng ở miệng</td>
+                                            <td>Luân</td>
+                                            <td>16/10/2020 14:02:45</td>
+                                            <td>120 Võ Văn Ngân, Q9, Tp.HCM</td>
+                                            <td><button type="button" class="btn btn-success">Xem thêm</button></td>
+                                            <td>Nặng</td>
+                                            <td>Bị thương</td>
+                                            <td>Miệng</td>
+                                            <td>Mèo</td>
+                                            <td>Vàng</td>
+                                            <td><button type="button" class="btn btn-danger">Xóa</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Mèo con bị phỏng ở miệng</td>
+                                            <td>Luân</td>
+                                            <td>16/10/2020 14:02:45</td>
+                                            <td>120 Võ Văn Ngân, Q9, Tp.HCM</td>
+                                            <td><button type="button" class="btn btn-success">Xem thêm</button></td>
+                                            <td>Nặng</td>
+                                            <td>Bị thương</td>
+                                            <td>Miệng</td>
+                                            <td>Mèo</td>
+                                            <td>Vàng</td>
+                                            <td><button type="button" class="btn btn-danger">Xóa</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Cứu trợ thú cưng</div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/datatables-demo.js"></script>
+</body>
+
+</html>

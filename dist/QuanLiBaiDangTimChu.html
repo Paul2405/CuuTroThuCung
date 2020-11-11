@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,
+            user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>Admin-page Cứu trợ thú cưng</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../dist/css/qlPostTim.css">
+    <link rel="stylesheet" href="./css/test.css">
+    <style type="text/css">
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        
+        body {
+            background-color: #ECEFF1;
+            color: #37474F;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-weight: 200;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Cứu trợ thú cưng</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Chính</div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Trang chủ
+                        </a>
+                        <div class="sb-sidenav-menu-heading">quản lí</div>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-scroll" style="color: white !important;"></i></div>
+                            Quản lí bài đăng
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down" style="color: white !important;"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="QuanLibaiDangTim.html">Bài đăng tìm cứu trợ</a>
+                                <a class="nav-link" href="QuanLiBaiDangTimChu.html">Bài đăng tìm chủ mới</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link" href="user.html" target="conttent">
+                            <div class="sb-nav-link-icon"><i class="fa fa-users" style="color: white !important;"></i>
+                            </div>
+                            Quản lí người dùng
+                        </a>
+                        <a class="nav-link" href="CuuTroPage.html" target="conttent">
+                            <div class="sb-nav-link-icon"><i class="fas fa-hospital" style="color: white !important;"></i></i>
+                            </div>
+                            Quản lí trung tâm cứu trợ
+                        </a>
+                        <a class="nav-link" href="PetPage.html" target="conttent">
+                            <div class="sb-nav-link-icon"><i class="fas fa-paw" style="color: white !important;"></i></i>
+                            </div>
+                            Quản lí thú cưng
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <a class="nav-link" href="login.html">
+                            Logout
+                        </a>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <section class="container">
+                    <div class="container-fluid">
+                        <h1 class="mt-4" style="font-weight: bold;">Trang quản lí bài đăng tìm chủ mới</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active"></li>
+                        </ol>
+                    </div>
+                    <div class="row active-with-click">
+                        <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 50px;">
+                            <article class="material-card Blue">
+                                <h2>
+                                    <span>Bum (Mèo) <i class="far fa-eye"></i></span>
+                                    <strong style="font-size: medium;">
+                                            - Trung tâm: SAR<br>
+                                            - Địa chỉ: 25 Lê Văn Việt<br>
+                                        </strong>
+                                    <button type="button" class="btn btn-success">Nhận nuôi</button>
+                                    <button type="button" class="btn btn-danger">Xóa</button>
+                                </h2>
+                                <div class="mc-content">
+                                    <div class="img-container">
+                                        <img class="img-responsive" style="height: 318px; width: 334px;" src="./assets/imgTimChu/nga.jpg">
+                                    </div>
+                                    <div class="mc-description" style="height: 400px; font-size: small;">
+                                        <br><br><br> - Thông tin tổng quan: <br> + Loại: Mèo<br> + Tuổi: 1 <br> + Giới tính: Đực <br> + Giống: Nga <br> + Cân nặng: 4 kg <br> -Tình trạng hiện tại: Đã tiêm phòng, tiệt giun, được thiến<br>
+                                    </div>
+                                </div>
+                                <a class="mc-btn-action">
+                                    <i class="fas fa-info"></i>
+                                </a>
+                                <div class="mc-footer">
+                                    <span style="font-size: x-small;">Bum là một con mèo của Nga. Nó được biết đến vơi tính cách trầm lặng và ngọt ngào. Mặc dù Bum có
+                                            xu hướng thư giãn và dễ tính. Bum cũng có tính chất của hoàng tộc</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 50px;">
+                            <article class="material-card Blue">
+                                <h2>
+                                    <span>Corgi (Chó) <i class="far fa-eye"></i></span>
+                                    <strong style="font-size: medium;">
+                                            - Trung tâm: PET PRO<br>
+                                            - Địa chỉ: Khu 2 Hoàng Cương<br>
+                                        </strong>
+                                    <button type="button" class="btn btn-success">Nhận nuôi</button>
+                                    <button type="button" class="btn btn-danger">Xóa</button>
+                                </h2>
+                                <div class="mc-content">
+                                    <div class="img-container">
+                                        <img class="img-responsive" style="height: 318px; width: 334px;" src="./assets/imgTimChu/Corgi1.jpg">
+                                    </div>
+                                    <div class="mc-description" style="height: 400px; font-size: small;">
+                                        <br><br><br> - Thông tin tổng quan: <br> + Loại: Chó<br> + Tuổi: 1 <br> + Giới tính: Đực <br> + Giống: Việt Nam <br> + Cân nặng: 3 kg <br> -Tình trạng hiện tại: Đã tiêm phòng, tiệt giun<br>
+                                    </div>
+                                </div>
+                                <a class="mc-btn-action">
+                                    <i class="fas fa-info"></i>
+                                </a>
+                                <div class="mc-footer">
+                                    <span style="font-size: x-small;">Corgi là một con chó của Việt Nam.Nó là một con chó
+                                            xu hướng thư giãn và dễ tính. Corgi cũng có tính chất của hoàng tộc</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 50px;">
+                            <article class="material-card Blue">
+                                <h2>
+                                    <span>Vàng (Mèo) <i class="far fa-eye"></i></span>
+                                    <strong style="font-size: medium;">
+                                            - Trung tâm: FPT<br>
+                                            - Địa chỉ: 16 Võ Văn Ngân, Quận 9<br>
+                                        </strong>
+                                    <button type="button" class="btn btn-success">Nhận nuôi</button>
+                                    <button type="button" class="btn btn-danger">Xóa</button>
+                                </h2>
+                                <div class="mc-content">
+                                    <div class="img-container">
+                                        <img class="img-responsive" style="height: 318px; width: 334px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg">
+                                    </div>
+                                    <div class="mc-description" style="height: 400px; font-size: small;">
+                                        <br><br><br><br> - Thông tin tổng quan: <br> + Loại: Mèo<br> + Tuổi: 2 <br> + Giới tính: cái <br> + Giống: Mỹ <br> + Cân nặng: 4 kg <br> -Tình trạng hiện tại: Đã tiêm phòng, tiệt giun<br>
+                                    </div>
+                                </div>
+                                <a class="mc-btn-action">
+                                    <i class="fas fa-info"></i>
+                                </a>
+                                <div class="mc-footer">
+                                    <span style="font-size: x-small;">Corgi là một con chó của Việt Nam.Nó là một con chó
+                                            xu hướng thư giãn và dễ tính. Corgi cũng có tính chất của hoàng tộc</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 50px;">
+                            <article class="material-card Blue">
+                                <h2>
+                                    <span>Tam Thể (Mèo) <i class="far fa-eye"></i></span>
+                                    <strong style="font-size: medium;">
+                                            - Trung tâm: SAR<br>
+                                            - Địa chỉ: 25 Võ Chí Công, Quận 9<br>
+                                        </strong>
+                                    <button type="button" class="btn btn-success">Nhận nuôi</button>
+                                    <button type="button" class="btn btn-danger">Xóa</button>
+                                </h2>
+                                <div class="mc-content">
+                                    <div class="img-container">
+                                        <img class="img-responsive" style="height: 318px; width: 334px;" src="https://c.files.bbci.co.uk/12A9B/production/_111434467_gettyimages-1143489763.jpg">
+                                    </div>
+                                    <div class="mc-description" style="height: 400px; font-size: small;">
+                                        <br><br><br> - Thông tin tổng quan: <br> + Loại: Mèo<br> + Tuổi: 1 <br> + Giới tính: cái <br> + Giống: Canada <br> + Cân nặng: 1 kg <br> -Tình trạng hiện tại: Đã tiêm phòng<br>
+                                    </div>
+                                </div>
+                                <a class="mc-btn-action">
+                                    <i class="fas fa-info"></i>
+                                </a>
+                                <div class="mc-footer">
+                                    <span style="font-size: x-small;">Tam Thể là một con chó của Việt Nam.Nó là một con chó
+                                            xu hướng thư giãn và dễ tính. Tam Thể cũng có tính chất của hoàng tộc</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 50px;">
+                            <article class="material-card Blue">
+                                <h2>
+                                    <span>Lucky (Chó) <i class="far fa-eye"></i></span>
+                                    <strong style="font-size: medium;">
+                                            - Trung tâm: SAR<br>
+                                            - Địa chỉ: Khu 2 Hàng Cương<br>
+                                        </strong>
+                                    <button type="button" class="btn btn-success">Nhận nuôi</button>
+                                    <button type="button" class="btn btn-danger">Xóa</button>
+                                </h2>
+                                <div class="mc-content">
+                                    <div class="img-container">
+                                        <img class="img-responsive" style="height: 318px; width: 334px;" src="./assets/imgTimChu/Shiba1.jpg">
+                                    </div>
+                                    <div class="mc-description" style="height: 400px; font-size: small;">
+                                        <br><br><br> - Thông tin tổng quan: <br> + Loại: chóbr> + Tuổi: 1 <br> + Giới tính: đực <br> + Giống: Thụy Sĩ <br> + Cân nặng: 1 kg <br> -Tình trạng hiện tại: Đã tiêm phòng<br>
+                                    </div>
+                                </div>
+                                <a class="mc-btn-action">
+                                    <i class="fas fa-info"></i>
+                                </a>
+                                <div class="mc-footer">
+                                    <span style="font-size: x-small;">Lucky là một con chó của Việt Nam.Nó là một con chó
+                                            xu hướng thư giãn và dễ tính. Lucky cũng có tính chất của hoàng tộc</span>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12" style="margin-bottom: 50px;">
+                            <article class="material-card Blue">
+                                <h2>
+                                    <span>Lucky (Chó) <i class="far fa-eye"></i></span>
+                                    <strong style="font-size: medium;">
+                                            - Trung tâm: SAR<br>
+                                            - Địa chỉ: Khu 2 Hàng Cương<br>
+                                        </strong><button type="button" class="btn btn-success">Nhận nuôi</button>
+                                    <button type="button" class="btn btn-danger">Xóa</button>
+                                </h2>
+                                <div class="mc-content">
+                                    <div class="img-container">
+                                        <img class="img-responsive" style="height: 318px; width: 334px;" src="./assets/imgTimChu/Shiba1.jpg">
+                                    </div>
+                                    <div class="mc-description" style="height: 400px; font-size: small;">
+                                        <br><br><br> - Thông tin tổng quan: <br> + Loại: chóbr> + Tuổi: 1 <br> + Giới tính: đực <br> + Giống: Thụy Sĩ <br> + Cân nặng: 1 kg <br> -Tình trạng hiện tại: Đã tiêm phòng<br>
+                                    </div>
+                                </div>
+                                <a class="mc-btn-action">
+                                    <i class="fas fa-info"></i>
+                                </a>
+                                <div class="mc-footer">
+                                    <span style="font-size: x-small;">Lucky là một con chó của Việt Nam.Nó là một con chó
+                                            xu hướng thư giãn và dễ tính. Lucky cũng có tính chất của hoàng tộc</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+                <script>
+                    $(function() {
+                        $('.material-card > .mc-btn-action').click(function() {
+                            var card = $(this).parent('.material-card');
+                            var icon = $(this).children('i');
+                            icon.addClass('fa-spin-fast');
+
+                            if (card.hasClass('mc-active')) {
+                                card.removeClass('mc-active');
+
+                                window.setTimeout(function() {
+                                    icon
+                                        .removeClass('fa-arrow-left')
+                                        .removeClass('fa-spin-fast')
+                                        .addClass('fa-bars');
+
+                                }, 800);
+                            } else {
+                                card.addClass('mc-active');
+
+                                window.setTimeout(function() {
+                                    icon
+                                        .removeClass('fa-bars')
+                                        .removeClass('fa-spin-fast')
+                                        .addClass('fa-arrow-left');
+
+                                }, 800);
+                            }
+                        });
+                    });
+                </script>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted"></div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/datatables-demo.js"></script>
+</body>
+
+</html>

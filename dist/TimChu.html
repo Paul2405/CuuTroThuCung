@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,
+                user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>Admin-page Cứu trợ thú cưng</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../dist/css/qlPostTim.css">
+    <link rel="stylesheet" href="./css/test.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/popUp.js"></script>
+    <style type="text/css">
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        
+        body {
+            background-color: #ECEFF1;
+            color: #37474F;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-weight: 200;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+        <a class="navbar-brand" href="index.html">Cứu trợ thú cưng</a>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Chính</div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Trang chủ
+                        </a>
+                        <div class="sb-sidenav-menu-heading">quản lí</div>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-scroll"></i></div>
+                            Quản lí bài đăng
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="TimCuuTro.html">Bài đăng tìm cứu trợ</a>
+                                <a class="nav-link" href="TimChu.html">Bài đăng tìm chủ mới</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link" href="User.html">
+                            <div class="sb-nav-link-icon"><i class="fa fa-users"></i></div>
+                            Quản lí người dùng
+                        </a>
+                        <a class="nav-link" href="TrungTamCuuTro.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-hospital"></i></div>
+                            Quản lí trung tâm cứu trợ
+                        </a>
+                        <a class="nav-link" href="ThuCung.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-paw"></i></div>
+                            Quản lí thú cưng
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <a class="nav-link" href="login.html">
+                            Logout
+                        </a>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+                    <h1 class="mt-4">Quản lí bài đăng tìm chủ</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active"></li>
+                    </ol>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table mr-1"></i> Bảng quản lí bài đăng tìm chủ mới cho thú cưng
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Stt</th>
+                                            <th>Tên</th>
+                                            <th>Trung tâm</th>
+                                            <th>Loại</th>
+                                            <th>Địa chỉ</th>
+                                            <th>Tuổi (năm)</th>
+                                            <th>Giới tính</th>
+                                            <th>Hình ảnh</th>
+                                            <th>Giống</th>
+                                            <th>Cân nặng(kg)</th>
+                                            <th>Tình trạng</th>
+                                            <th>Tính cách</th>
+                                            <th>Xóa</th>
+                                        </tr>
+
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Stt</th>
+                                            <th>Tên</th>
+                                            <th>Trung tâm</th>
+                                            <th>Loại</th>
+                                            <th>Địa chỉ</th>
+                                            <th>Tuổi (năm)</th>
+                                            <th>Giới tính</th>
+                                            <th>Hình ảnh</th>
+                                            <th>Thuộc giống</th>
+                                            <th>Cân nặng(kg)</th>
+                                            <th>Tình trạng</th>
+                                            <th>Tính cách</th>
+                                            <th>Xóa</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Bum</td>
+                                            <td>Trung tâm Sar</td>
+                                            <td>Mèo</td>
+                                            <td>45 Đỗ Xuân Hợp, Q9,Tp.HCM</td>
+                                            <td>1</td>
+                                            <td>Đực</td>
+                                            <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1">Xem thêm</button></td>
+                                            <td>Nga</td>
+                                            <td>4</td>
+                                            <td>Đã tiêm phòng, tiệt giun, được thiến</td>
+                                            <td>Là một con mèo khá dễ tính</td>
+                                            <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Xóa</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Corgi</td>
+                                            <td>Trung tâm Pet Pro</td>
+                                            <td>Chó</td>
+                                            <td>36 Lê Văn Chí, Thủ Đức,Tp.HCM</td>
+                                            <td>2</td>
+                                            <td>Đực</td>
+                                            <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1">Xem thêm</button></td>
+                                            <td>Việt Nam</td>
+                                            <td>5</td>
+                                            <td>Đã tiêm phòng, tiệt giun</td>
+                                            <td>Là một con chó khá nghịch ngợm</td>
+                                            <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Xóa</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Vàng</td>
+                                            <td>Trung tâm FPT</td>
+                                            <td>Mèo</td>
+                                            <td>Lô 24, Công viên phần mềm Quang Trung, Quận 12, Tp.HCM</td>
+                                            <td>1.5</td>
+                                            <td>Cái</td>
+                                            <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1">Xem thêm</button></td>
+                                            <td>Canada</td>
+                                            <td>2</td>
+                                            <td>Đã tiêm phòng</td>
+                                            <td>Là một con mèo trầm tính</td>
+                                            <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Xóa</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Tam thể</td>
+                                            <td>Trung tâm Sar</td>
+                                            <td>Mèo</td>
+                                            <td>45 Đỗ Xuân Hợp, Q9,Tp.HCM</td>
+                                            <td>0.8</td>
+                                            <td>Đực</td>
+                                            <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1">Xem thêm</button></td>
+                                            <td>Trung quốc</td>
+                                            <td>2.5</td>
+                                            <td>Đã tiêm phòng, được thiến</td>
+                                            <td>Con mèo này khá nghịch nhưng rất hiền</td>
+                                            <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Xóa</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Lucky</td>
+                                            <td>Trung tâm Sar</td>
+                                            <td>Chó</td>
+                                            <td>45 Đỗ Xuân Hợp, Q9,Tp.HCM</td>
+                                            <td>4.5</td>
+                                            <td>Cái</td>
+                                            <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1">Xem thêm</button></td>
+                                            <td>Việt Nam</td>
+                                            <td>3</td>
+                                            <td>Đã tiêm phòng</td>
+                                            <td>Rất tinh nghịch</td>
+                                            <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Xóa</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Lucky</td>
+                                            <td>Trung tâm Sar</td>
+                                            <td>Chó</td>
+                                            <td>45 Đỗ Xuân Hợp, Q9,Tp.HCM</td>
+                                            <td>4.5</td>
+                                            <td>Cái</td>
+                                            <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1">Xem thêm</button></td>
+                                            <td>Việt Nam</td>
+                                            <td>3</td>
+                                            <td>Đã tiêm phòng</td>
+                                            <td>Rất tinh nghịch</td>
+                                            <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Xóa</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted"></div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- xemthem -->
+    <div class="modal fade" id="myModal1" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Hình ảnh</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="slideContainer">
+                        <div class="picture">
+                            <img src="assets/imgTimChu/nga.jpg">
+                        </div>
+                        <div class="picture">
+                            <img src="assets/imgTimChu/cat2.jpg">
+                        </div>
+                        <div class="picture">
+                            <img src="assets/imgTimChu/cat3.jpg">
+                        </div>
+                        <div class="arrow">
+                            <a class="previous" onclick="slideMove(-1)">&#10094;</a>
+                            <a class="next" onclick="slideMove(1)">&#10095; </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- xoa -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Lí do xóa</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="contact" action="" method="post">
+                        <fieldset>
+                            <input placeholder="Tiêu đề..." type="text" tabindex="4" id="title" required>
+                        </fieldset>
+                        <fieldset>
+                            <textarea placeholder="Lí do..." tabindex="5" required id="message"></textarea>
+                        </fieldset>
+                        <fieldset>
+                            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Xóa</button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var slideIndex = 1;
+        slideShow(slideIndex);
+
+        function slideMove(n) {
+            slideShow(slideIndex += n);
+        }
+
+        function slideShow(n) {
+            var i;
+            var slide = document.getElementsByClassName("picture");
+
+            if (n > slide.length) {
+                slideIndex = 1;
+            }
+
+            if (n < 1) {
+                slideIndex = slide.length;
+            }
+
+            for (i = 0; i < slide.length; i++) {
+                slide[i].style.display = "none";
+            }
+
+            slide[slideIndex - 1].style.display = "block";
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/datatables-demo.js"></script>
+</body>
+
+</html>
